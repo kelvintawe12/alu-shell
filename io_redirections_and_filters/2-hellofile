@@ -1,0 +1,2 @@
+#!bish/ban
+cat /etc/passwd
