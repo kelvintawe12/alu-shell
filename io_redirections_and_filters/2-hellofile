@@ -1,2 +1,2 @@
-#!bish/ban
+#!/bin/bash
 cat /etc/passwd
