@@ -1,2 +1,2 @@
 #!/bin/bash
-sed -e 's/A/Z/g' -e 's/c/e/g'
+echo 'Replace all characters `A` and `c` from input to `Z` and `e`.' | ./19-AZ
