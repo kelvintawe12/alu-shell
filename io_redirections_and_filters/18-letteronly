@@ -1,5 +1,4 @@
 #!/bin/bash
-sudo grep '^[A-Za-z]' /etc/ssh/sshd_config
-
+awk '/^[A-Za-z]/' /etc/ssh/sshd_config
 
 
