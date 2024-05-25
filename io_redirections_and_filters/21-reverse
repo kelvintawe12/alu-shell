@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "$user_input" | rev
+echo "$USER_input" | revi
