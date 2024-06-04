@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # Get the name of the process associated with the PID
+bg_pid=$!
 process_name=$(cat "/proc/$bg_pid/comm")
 echo "$bg_pid $process_name"
