@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-
-#Search for processes containing the word "bash"
-# Iterate through the PIDs and display the process name and PID
-for pid in $pids; do
-    process_name=$(ps -o comm= -p $pid
+# Get the name of the process associated with the PID
+process_name=$(cat /proc/$bg_pid/comm)
+echo "$bg_pid $process_name"
