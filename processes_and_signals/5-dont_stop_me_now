@@ -3,4 +3,4 @@
 #Terminate the process using the kill <pid>
 ./4-to_infinity_and_beyond
 pgrep -f "4-to_infinity_and_beyond"
-kill 13 
+SIGkill 13
