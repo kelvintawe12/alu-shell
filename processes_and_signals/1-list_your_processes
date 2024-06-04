@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#listing processes in a hierarchical manner
+ps aux --forest
