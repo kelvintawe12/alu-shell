@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
-#display
-prog_pid=()
-readarray -t prog_pid < < (pgrep-la -x ".bash*" | grep '4-to_infinity_and_beyond' | cut -d ' ' -f 1)
-for ((i = 0; i < "${#prog_pid[@]}"; i++)) do
-kill -s SIGTERM "${prog_pid[i]}"
-done
+# stop_infinity.sh
+
+# Find the process ID (PID) of the 4-to_infinity_and_beyond process
+# If the process is running, terminate it
+PID=$(pgrep 4-to_infinity_and_beyond)
+
+if [ -n "$PID" ]; then
+    kill "$PID"
+    echo "Process 4-to_infinity_and_beyond (PID $PID) has been terminated."
+else
+    echo "Process 4-to_infinity_and_beyond is not currently running."
+ifi
+
