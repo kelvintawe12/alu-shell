@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# 11-manage_my_process
+
+PID_FILE="/var/run/my_process.pid"
+
+case "$1" in
+    start)
+        if [ -f "$PID_FILE" ]; then
+            echo "manage_my_process is already running."
+        else
+            ./manage_my_process &
+            echo $! > "$PID_FILE"
+            echo "manage_my_process started"
+        fi
+        ;;
+    stop)
+        if [ -f "$PID_FILE" ]; then
+            kill "$(cat "$PID_FILE")"
+            rm "$PID_FILE"
+            echo "manage_my_process stopped"
+        else
+            echo "manage_my_process is not currently running."
+        fi
+        ;;
+    restart)
+        $0 stop
+        $0 start
+        echo "manage_my_process restarted"
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        ;;
+esac
