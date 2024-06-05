@@ -10,5 +10,4 @@ if [ -n "$PID" ]; then
     echo "Process 4-to_infinity_and_beyond (PID $PID) has been terminated."
 else
     echo "Process 4-to_infinity_and_beyond is not currently running."
-ifi
-
+fi
