@@ -1,17 +1,9 @@
 #!/usr/bin/env bash
-# manage_my_process
+# Indefinitely writes "I am alive" to the file /tmp/my_process.
+#   Pauses two seconds in between each message.
 
-# Function to handle SIGTERM (Ctrl+C)
-handle_sigterm() {
-    echo "I am invincible!!!"
-    exit 0
-}
-
-# Register the SIGTERM handler
-trap handle_sigterm SIGTERM
-
-# Infinite loop: Write "I am alive!" to /tmp/my_process
-while true; do
-    echo "I am alive!"
-    sleep 2
+while true
+do
+  echo "I am alive!" >> /tmp/my_process
+  sleep 2
 done
