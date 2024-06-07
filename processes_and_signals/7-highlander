@@ -1,17 +1,10 @@
 #!/usr/bin/env bash
-# 67-stop_me_if_you_can
+# This script displays to infinity and beyond indefinitely 
+# with a sleep 2 in between each iteration
+# I am invincible!!! when receiving a SIGTERM signal
 
-# Function to handle SIGTERM (Ctrl+C)
-handle_sigterm() {
-    echo "I am invincible!!!"
-    exit 0
-}
-
-# Register the SIGTERM handler
-trap handle_sigterm SIGTERM
-
-# Infinite loop
+trap 'echo "I am invincible!!!"' 15
 while true; do
-    echo "To infinity and beyond"
-    sleep 2
+	echo "to infinity and beyond"
+	sleep 2
 done
